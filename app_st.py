@@ -22,10 +22,8 @@ st.set_page_config(
 @st.cache_resource
 def start_worker():
     def _run():
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
         try:
-            loop.run_until_complete(run_ai_simulation())
+            asyncio.run(run_ai_simulation())
         except Exception as e:
             print(f"Background worker failed: {e}")
             
