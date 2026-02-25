@@ -160,7 +160,7 @@ def render_idea_card(idea):
     
     vp_html = ""
     if idea.get('viewpoint'):
-        vp_text = idea['viewpoint'].replace(f"【{idea.get('persona', '')}見解】", "").strip()
+        vp_text = str(idea['viewpoint']).replace(f"【{idea.get('persona', '')}見解】", "").strip()
         vp_html = f"""
         <div class="viewpoint-box" style="border-left-color: var(--primary);">
             <strong><i class="fas fa-lightbulb"></i> {idea.get('persona', '提案者')}からの提案アピール:</strong><br/>
@@ -301,6 +301,13 @@ def render_idea_card(idea):
         </div>
         """
 
+    def _format_field(val):
+        if isinstance(val, dict):
+            return "<br>".join([f"<b>{k}</b>: {v}" for k, v in val.items()])
+        elif isinstance(val, list):
+            return "<br>".join([str(x) for x in val])
+        return str(val).replace('\n', '<br>')
+
     card_html = f"""
     <div class="card" data-updated-at="{idea.get('updated_at', '')}">
         <div class="card-header">
@@ -336,9 +343,10 @@ def render_idea_card(idea):
                 <summary></summary>
                 <div class="card-details">
                     <h4>APPROACH (アプローチ)</h4>
-                    <p>{idea.get('approach', '').replace('\n', '<br>')}</p>
+                    <p>{_format_field(idea.get('approach', ''))}</p>
                     <h4>RATIONALE (根拠)</h4>
-                    <p>{idea.get('rationale', '').replace('\n', '<br>')}</p>
+                    <p>{_format_field(idea.get('rationale', ''))}</p>
+
                     {schedule_html}
                 </div>
             </details>
