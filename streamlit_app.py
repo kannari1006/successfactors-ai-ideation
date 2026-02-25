@@ -360,10 +360,21 @@ def main():
     st.sidebar.title("フィルター & ソート")
     st.sidebar.markdown("---")
     
-    target_options = ["すべて"] + sorted(list(set(i.get("target", "") for i in ideas if i.get("target"))))
+    # Safely extract unique targets (handling strings or lists)
+    raw_targets = []
+    raw_modules = []
+    for i in ideas:
+        t = i.get("target")
+        if t:
+            raw_targets.extend(t if isinstance(t, list) else [t])
+        m = i.get("modules")
+        if m:
+            raw_modules.extend(m if isinstance(m, list) else [m.strip() for m in str(m).split(",")])
+            
+    target_options = ["すべて"] + sorted(list(set(raw_targets)))
     sel_target = st.sidebar.selectbox("ターゲット", target_options)
     
-    module_options = ["すべて"] + sorted(list(set(i.get("modules", "") for i in ideas if i.get("modules"))))
+    module_options = ["すべて"] + sorted(list(set(raw_modules)))
     sel_module = st.sidebar.selectbox("モジュール", module_options)
     
     sort_options = {
@@ -380,9 +391,9 @@ def main():
     # Filtering Logic
     filtered_ideas = ideas
     if sel_target != "すべて":
-        filtered_ideas = [i for i in filtered_ideas if i.get("target") == sel_target]
+        filtered_ideas = [i for i in filtered_ideas if sel_target in (i.get("target") if isinstance(i.get("target"), list) else [i.get("target")])]
     if sel_module != "すべて":
-        filtered_ideas = [i for i in filtered_ideas if i.get("modules") == sel_module]
+        filtered_ideas = [i for i in filtered_ideas if sel_module in (i.get("modules") if isinstance(i.get("modules"), list) else [m.strip() for m in str(i.get("modules")).split(",")])]
         
     sort_type = sort_options[sel_sort]
     if sort_type == "desc":
