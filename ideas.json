@@ -1,0 +1,4020 @@
+[
+  {
+    "id": "6abd02aa-16c7-4d25-b616-bd80bf655722",
+    "persona": "Operations Manager",
+    "title": "自動面接スケジュール調整Bot",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】候補者と面接官のOutlook予定表のすり合わせが手動で発生。\n\n【解決案】Recruitingのステータス変更をトリガーにし、Microsoft Graph API経由で空き時間を自動抽出・送信する。\n\n【追加検討】更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。",
+    "rationale": "採用担当の業務負担を半減させる特効薬。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "API仕様定義",
+        "tasks": [
+          {
+            "name": "O365とのセキュリティ確認とWebHook設計",
+            "duration": "3週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "面接フローのプロセス定義",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "Bot開発",
+        "tasks": [
+          {
+            "name": "空き時間抽出・調整ロジック実装",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "テスト候補者を用いた受入テスト",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "運用切り替え",
+        "tasks": [
+          {
+            "name": "本番デプロイとエラーモニタリング",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "受入テスト完了"
+          },
+          {
+            "name": "現場担当者への新フロー周知",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "デプロイ完了"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 3,
+    "cost": "約350万円",
+    "created_at": "2026-02-25T18:12:42.207065+00:00",
+    "updated_at": "2026-02-25T18:22:00.032592+00:00"
+  },
+  {
+    "id": "8dffc069-f8f2-4885-9f63-2267b1044df2",
+    "persona": "HR Specialist",
+    "title": "スキルオントロジーとLMSの自動連携",
+    "target": "新規開拓",
+    "modules": "Learning, Succession & Development",
+    "approach": "【課題】従業員がキャリアパスに必要なスキルを把握できずLMSが受講されない。\n\n【解決案】職務定義のスキル要件と連携し、不足スキルを補うLearningコースを自動リコメンドする。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "リスキリングトレンドに合致し、Learningのライセンス販売に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "スキル定義",
+        "tasks": [
+          {
+            "name": "コア職務のレベル別要件定義",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "マッピング",
+        "tasks": [
+          {
+            "name": "既存LMSコンテンツの棚卸し",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "スキルタグとの紐付け設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "棚卸し完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "トライアル運用",
+        "tasks": [
+          {
+            "name": "パイロット部門でのレコメンド検証",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "マッピング完了"
+          },
+          {
+            "name": "全社向けのキャリア自律方針発信",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "検証完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約450万円",
+    "created_at": "2026-02-25T17:26:48.194515+00:00",
+    "updated_at": "2026-02-25T18:12:47.966369+00:00",
+    "review_comment": "Sales & Marketingからの指摘: 導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。"
+  },
+  {
+    "id": "bbde4318-8f92-41f8-920a-71403ca14d38",
+    "persona": "Operations Manager",
+    "title": "組織改編データ移行の事前バリデーションツール",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】大量のCSVインポートエラーで人事の残業が常態化。\n\n【解決案】インポート前にSuccessFactorsのデータ要件（必須項目・マスター整合性）をローカルで自動チェックするExcel/Webアプリを導入。",
+    "rationale": "人事担当者のダイレクトなペインポイントを解消するため、成約率が極めて高い。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "仕様定義",
+        "tasks": [
+          {
+            "name": "過去のエラーログ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "なし"
+          },
+          {
+            "name": "バリデーションルール一覧の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "開発・テスト",
+        "tasks": [
+          {
+            "name": "チェックツールの実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "過去データを用いた単体テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "実地運用",
+        "tasks": [
+          {
+            "name": "次期組織改編データでのプレテスト",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "開発完了"
+          },
+          {
+            "name": "操作マニュアル提供と運用開始",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "プレテスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約100万円",
+    "created_at": "2026-02-25T18:12:56.238629+00:00",
+    "updated_at": "2026-02-25T18:12:56.238629+00:00"
+  },
+  {
+    "id": "befaa3c4-52e5-48a8-bafe-2cd7cc376189",
+    "persona": "Operations Manager",
+    "title": "自動面接スケジュール調整Bot",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】候補者と面接官のOutlook予定表のすり合わせが手動で発生。\n\n【解決案】Recruitingのステータス変更をトリガーにし、Microsoft Graph API経由で空き時間を自動抽出・送信する。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "採用担当の業務負担を半減させる特効薬。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "API仕様定義",
+        "tasks": [
+          {
+            "name": "O365とのセキュリティ確認とWebHook設計",
+            "duration": "3週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "面接フローのプロセス定義",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "Bot開発",
+        "tasks": [
+          {
+            "name": "空き時間抽出・調整ロジック実装",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "テスト候補者を用いた受入テスト",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "運用切り替え",
+        "tasks": [
+          {
+            "name": "本番デプロイとエラーモニタリング",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "受入テスト完了"
+          },
+          {
+            "name": "現場担当者への新フロー周知",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "デプロイ完了"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 3,
+    "cost": "約350万円",
+    "created_at": "2026-02-25T18:06:42.550197+00:00",
+    "updated_at": "2026-02-25T18:13:01.001840+00:00"
+  },
+  {
+    "id": "455770f7-de50-46a7-967c-e337ed37b3b9",
+    "persona": "HR Specialist",
+    "title": "評価プロセス可視化ダッシュボードの導入",
+    "target": "既存顧客",
+    "modules": "Performance & Goals",
+    "approach": "【課題】評価面談時、期中の目標変更やフィードバックの経緯が不透明で従業員の不満に繋がる。\n\n【解決案】Performance & Goalsの標準レポート機能を拡張し、目標変更履歴と連続的フィードバック(CPM)のデータを一覧できるマネージャー向けダッシュボードを構築する。",
+    "rationale": "評価の納得度低下という明確な人事課題を解決でき、既存顧客のモジュール活用度アップによるリテンション強化に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "課題アセスメント",
+        "tasks": [
+          {
+            "name": "評価シートの現状分析",
+            "duration": "1週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "マネージャー層への課題ヒアリング",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "設計・構築",
+        "tasks": [
+          {
+            "name": "ダッシュボード要件定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "システム構築・レポート作成",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "要件定義承認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "テスト・展開",
+        "tasks": [
+          {
+            "name": "UAT（受入テスト）の実施",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "構築完了"
+          },
+          {
+            "name": "説明会実施と全社展開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "UAT完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約150万円",
+    "created_at": "2026-02-25T18:13:15.274930+00:00",
+    "updated_at": "2026-02-25T18:13:15.274930+00:00"
+  },
+  {
+    "id": "74caa9bd-a3be-4317-9055-a07f177ce0a0",
+    "persona": "System Architect",
+    "title": "給与計算システム向け双方向APIハブ",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】国内給与（ COMPANY等）との連携が手動CSVでミスが多い。\n\n【解決案】BTP (Integration Suite) を介してECのマスター変更を特定し、給与システムへ自動マッピング連携する。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "給与自動化は人事給与チームの悲願であり、高額なSI案件として受注しやすい。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "マッピング定義",
+        "tasks": [
+          {
+            "name": "国内給与システムのインターフェース仕様確認",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "EC項目のデータマッピング・変換仕様定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "仕様確認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2-3",
+        "phase": "BTP開発",
+        "tasks": [
+          {
+            "name": "Integration Flowの開発と暗号化設定",
+            "duration": "6週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "定義完了後"
+          },
+          {
+            "name": "検証用ペイロール環境でのダミーデータ連携テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "開発完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 4",
+        "phase": "並行稼働",
+        "tasks": [
+          {
+            "name": "旧新システムでの結果突合テスト（並行稼働）",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "連携テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約800万円〜",
+    "created_at": "2026-02-25T17:20:15.545835+00:00",
+    "updated_at": "2026-02-25T18:13:27.058160+00:00",
+    "review_comment": "Data Scientistからの指摘: 導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。"
+  },
+  {
+    "id": "0c954c0f-7965-4610-9ad6-6bb43f94cf6c",
+    "persona": "Sales & Marketing",
+    "title": "内定者エンゲージメント向け専用ポータルのクイック導入",
+    "target": "新規開拓",
+    "modules": "Onboarding",
+    "approach": "【課題】内定承諾から入社までの辞退率が高い。\n\n【解決案】Onboardingを活用し、内定者専用のモバイルフレンドリーなポータルを短期構築する。",
+    "rationale": "採用コスト削減という明確なROIを提示でき、ドアノック商材として強力。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "ポータル設計",
+        "tasks": [
+          {
+            "name": "ベストプラクティスUIの提示・選択",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "掲載コンテンツ（動画等）の準備",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "UI決定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "システム構築",
+        "tasks": [
+          {
+            "name": "Onboardingモジュール初期設定",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "コンテンツ登録・リンク設定",
+            "duration": "1週間",
+            "raci": "V: R / C: A",
+            "dependency": "初期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "公開検証",
+        "tasks": [
+          {
+            "name": "モバイル端末・PCでの表示テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "構築完了後"
+          },
+          {
+            "name": "内定者向け運用マニュアル展開・公開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約250万円",
+    "created_at": "2026-02-25T18:13:37.307351+00:00",
+    "updated_at": "2026-02-25T18:13:37.307351+00:00"
+  },
+  {
+    "id": "c2899dfb-be97-4773-a429-c53ddfca726f",
+    "persona": "HR Specialist",
+    "title": "スキルオントロジーとLMSの自動連携",
+    "target": "新規開拓",
+    "modules": "Learning, Succession & Development",
+    "approach": "【課題】従業員がキャリアパスに必要なスキルを把握できずLMSが受講されない。\n\n【解決案】職務定義のスキル要件と連携し、不足スキルを補うLearningコースを自動リコメンドする。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "リスキリングトレンドに合致し、Learningのライセンス販売に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "スキル定義",
+        "tasks": [
+          {
+            "name": "コア職務のレベル別要件定義",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "マッピング",
+        "tasks": [
+          {
+            "name": "既存LMSコンテンツの棚卸し",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "スキルタグとの紐付け設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "棚卸し完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "トライアル運用",
+        "tasks": [
+          {
+            "name": "パイロット部門でのレコメンド検証",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "マッピング完了"
+          },
+          {
+            "name": "全社向けのキャリア自律方針発信",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "検証完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約450万円",
+    "created_at": "2026-02-25T18:06:57.572222+00:00",
+    "updated_at": "2026-02-25T18:13:40.086192+00:00"
+  },
+  {
+    "id": "39f2606d-da56-4033-8551-f2c9f6e84788",
+    "persona": "HR Specialist",
+    "title": "スキルオントロジーとLMSの自動連携",
+    "target": "新規開拓",
+    "modules": "Learning, Succession & Development",
+    "approach": "【課題】従業員がキャリアパスに必要なスキルを把握できずLMSが受講されない。\n\n【解決案】職務定義のスキル要件と連携し、不足スキルを補うLearningコースを自動リコメンドする。",
+    "rationale": "リスキリングトレンドに合致し、Learningのライセンス販売に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "スキル定義",
+        "tasks": [
+          {
+            "name": "コア職務のレベル別要件定義",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "マッピング",
+        "tasks": [
+          {
+            "name": "既存LMSコンテンツの棚卸し",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "スキルタグとの紐付け設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "棚卸し完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "トライアル運用",
+        "tasks": [
+          {
+            "name": "パイロット部門でのレコメンド検証",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "マッピング完了"
+          },
+          {
+            "name": "全社向けのキャリア自律方針発信",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "検証完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約450万円",
+    "created_at": "2026-02-25T18:13:52.336450+00:00",
+    "updated_at": "2026-02-25T18:13:52.336450+00:00"
+  },
+  {
+    "id": "457c5cd9-9057-4456-a5c2-7fb08a60d7cb",
+    "persona": "Data Scientist",
+    "title": "AI面接官による初期スクリーニング補助",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】大量のエントリーシートの評価基準がブレて人事工数が圧迫される。\n\n【解決案】レジュメテキストと過去実績をLLMで解析しマッチ度を事前スコアリングするアドオン。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "生成AI技術をエンタープライズHRに組み込む先進事例としてブランディングに貢献。",
+    "schedule": {
+      "durations": 3,
+      "tracks": [
+        {
+          "name": "全体スケジュール",
+          "items": [
+            {
+              "name": "要件定義",
+              "start": 1,
+              "end": 1
+            },
+            {
+              "name": "開発・実装",
+              "start": 2,
+              "end": 2
+            },
+            {
+              "name": "テスト・リリース",
+              "start": 3,
+              "end": 3
+            }
+          ]
+        },
+        {
+          "name": "ベンダー (導入)",
+          "items": [
+            {
+              "name": "システム要件定義",
+              "start": 1,
+              "end": 1
+            },
+            {
+              "name": "システム構築",
+              "start": 2,
+              "end": 2
+            },
+            {
+              "name": "結合テスト・本番展開",
+              "start": 3,
+              "end": 3
+            }
+          ]
+        },
+        {
+          "name": "企業側 (人事・情シス)",
+          "items": [
+            {
+              "name": "業務要件整理",
+              "start": 1,
+              "end": 1
+            },
+            {
+              "name": "既存データ整理",
+              "start": 1,
+              "end": 2
+            },
+            {
+              "name": "UAT・マニュアル",
+              "start": 3,
+              "end": 3
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "phase": "要件定義",
+          "name": "業務課題とToBeフローの策定",
+          "duration": "2週間",
+          "dependency": "なし",
+          "actor": "顧客"
+        },
+        {
+          "phase": "要件定義",
+          "name": "システム要件ヒアリング・Fit&Gap",
+          "duration": "2週間",
+          "dependency": "ToBeフロー策定後",
+          "actor": "ベンダー"
+        },
+        {
+          "phase": "開発・実装",
+          "name": "SuccessFactors基本設定・拡張開発",
+          "duration": "3週間",
+          "dependency": "要件定義完了",
+          "actor": "ベンダー"
+        },
+        {
+          "phase": "開発・実装",
+          "name": "移行用データクレンジング",
+          "duration": "4週間",
+          "dependency": "なし",
+          "actor": "顧客"
+        },
+        {
+          "phase": "テスト・リリース",
+          "name": "結合テスト・移行リハーサル",
+          "duration": "2週間",
+          "dependency": "開発完了",
+          "actor": "ベンダー"
+        },
+        {
+          "phase": "テスト・リリース",
+          "name": "UAT（受入テスト）",
+          "duration": "1週間",
+          "dependency": "結合テスト完了",
+          "actor": "顧客"
+        },
+        {
+          "phase": "テスト・リリース",
+          "name": "社内マニュアル作成・展開",
+          "duration": "2週間",
+          "dependency": "UAT完了",
+          "actor": "顧客"
+        }
+      ]
+    },
+    "cost": "約500万円",
+    "created_at": "2026-02-25T16:28:21.771253+00:00",
+    "updated_at": "2026-02-25T18:14:00.126560+00:00",
+    "difficulty": "中難易度（一部アドオン開発が必要だが、要件は明確）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "review_comment": "Financial Analystからの指摘: 更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。"
+  },
+  {
+    "id": "54836013-913a-411f-8a9e-23732e226e91",
+    "persona": "Operations Manager",
+    "title": "組織改編データ移行の事前バリデーションツール",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】大量のCSVインポートエラーで人事の残業が常態化。\n\n【解決案】インポート前にSuccessFactorsのデータ要件（必須項目・マスター整合性）をローカルで自動チェックするExcel/Webアプリを導入。",
+    "rationale": "人事担当者のダイレクトなペインポイントを解消するため、成約率が極めて高い。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "仕様定義",
+        "tasks": [
+          {
+            "name": "過去のエラーログ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "なし"
+          },
+          {
+            "name": "バリデーションルール一覧の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "開発・テスト",
+        "tasks": [
+          {
+            "name": "チェックツールの実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "過去データを用いた単体テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "実地運用",
+        "tasks": [
+          {
+            "name": "次期組織改編データでのプレテスト",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "開発完了"
+          },
+          {
+            "name": "操作マニュアル提供と運用開始",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "プレテスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約100万円",
+    "created_at": "2026-02-25T18:14:12.363084+00:00",
+    "updated_at": "2026-02-25T18:14:12.363084+00:00"
+  },
+  {
+    "id": "ac3d44f4-a4fa-4256-9268-8a0cf047c068",
+    "persona": "HR Specialist",
+    "title": "評価プロセス可視化ダッシュボードの導入",
+    "target": "既存顧客",
+    "modules": "Performance & Goals",
+    "approach": "【課題】評価面談時、期中の目標変更やフィードバックの経緯が不透明で従業員の不満に繋がる。\n\n【解決案】Performance & Goalsの標準レポート機能を拡張し、目標変更履歴と連続的フィードバック(CPM)のデータを一覧できるマネージャー向けダッシュボードを構築する。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "評価の納得度低下という明確な人事課題を解決でき、既存顧客のモジュール活用度アップによるリテンション強化に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "課題アセスメント",
+        "tasks": [
+          {
+            "name": "評価シートの現状分析",
+            "duration": "1週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "マネージャー層への課題ヒアリング",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "設計・構築",
+        "tasks": [
+          {
+            "name": "ダッシュボード要件定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "システム構築・レポート作成",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "要件定義承認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "テスト・展開",
+        "tasks": [
+          {
+            "name": "UAT（受入テスト）の実施",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "構築完了"
+          },
+          {
+            "name": "説明会実施と全社展開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "UAT完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約150万円",
+    "created_at": "2026-02-25T18:07:13.605212+00:00",
+    "updated_at": "2026-02-25T18:14:18.149130+00:00"
+  },
+  {
+    "id": "09ca3007-eb7e-4e83-b2bd-51f4ed952c20",
+    "persona": "Data Scientist",
+    "title": "AI面接官による初期スクリーニング補助",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】大量のエントリーシートの評価基準がブレて人事工数が圧迫される。\n\n【解決案】レジュメテキストと過去実績をLLMで解析しマッチ度を事前スコアリングするアドオン。",
+    "rationale": "生成AI技術をエンタープライズHRに組み込む先進事例としてブランディングに貢献。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "PoC",
+        "tasks": [
+          {
+            "name": "コンピテンシー定義と過去データ抽出",
+            "duration": "3週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "LLMプロンプトの基礎構築",
+            "duration": "1週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "データ抽出完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "システム結合",
+        "tasks": [
+          {
+            "name": "SF RecruitingとのAPI連携実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "実際の応募データを用いたスコア妥当性検証",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "連携完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "実運用",
+        "tasks": [
+          {
+            "name": "バイアスチェックと本番リリース",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "妥当性検証完了"
+          },
+          {
+            "name": "面接官向けの見方ガイド展開と運用開始",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "リリース後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "中難易度（一部アドオン開発やAPI連携が必要なため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約500万円",
+    "created_at": "2026-02-25T18:14:25.396041+00:00",
+    "updated_at": "2026-02-25T18:14:25.396041+00:00"
+  },
+  {
+    "id": "8cec17c0-5347-499d-9037-a3368a9cbb00",
+    "persona": "System Architect",
+    "title": "IDaaS連携による入退社プロセスの完全自動化",
+    "target": "新規開拓",
+    "modules": "Employee Central",
+    "approach": "【課題】入社時や異動時にアカウント付与が手作業で行われ、セキュリティリスクと業務遅延が発生。\n\n【解決案】Employee Centralをマスタとし、Azure ADやOkta(IDaaS)との自動同期API(SCIM)を設定する。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "情報システム部と人事部の双方の工数を劇的に削減でき、セキュリティガバナンス強化という経営層の刺さる価値を提供できる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "システム要件定義",
+        "tasks": [
+          {
+            "name": "API連携方式・認証方式の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "権限マトリクスとマッピング定義",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "方式策定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "SCIM連携実装",
+        "tasks": [
+          {
+            "name": "Azure AD/Okta側の自動同期設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "例外エラーハンドリング・ログ実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "同期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "検証・移行",
+        "tasks": [
+          {
+            "name": "テスト用ダミーデータでの結合テスト",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "実装完了"
+          },
+          {
+            "name": "本番環境へのデプロイと情シス引き継ぎ",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約400万円〜",
+    "created_at": "2026-02-25T18:04:02.280044+00:00",
+    "updated_at": "2026-02-25T18:14:31.179277+00:00"
+  },
+  {
+    "id": "194d35d6-e0f3-4495-8c84-b388f5a261aa",
+    "persona": "Operations Manager",
+    "title": "自動面接スケジュール調整Bot",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】候補者と面接官のOutlook予定表のすり合わせが手動で発生。\n\n【解決案】Recruitingのステータス変更をトリガーにし、Microsoft Graph API経由で空き時間を自動抽出・送信する。",
+    "rationale": "採用担当の業務負担を半減させる特効薬。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "API仕様定義",
+        "tasks": [
+          {
+            "name": "O365とのセキュリティ確認とWebHook設計",
+            "duration": "3週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "面接フローのプロセス定義",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "Bot開発",
+        "tasks": [
+          {
+            "name": "空き時間抽出・調整ロジック実装",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "テスト候補者を用いた受入テスト",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "運用切り替え",
+        "tasks": [
+          {
+            "name": "本番デプロイとエラーモニタリング",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "受入テスト完了"
+          },
+          {
+            "name": "現場担当者への新フロー周知",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "デプロイ完了"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 3,
+    "cost": "約350万円",
+    "created_at": "2026-02-25T18:14:47.430495+00:00",
+    "updated_at": "2026-02-25T18:14:47.430495+00:00"
+  },
+  {
+    "id": "8b3de79d-3860-4a85-a2d1-d62aaf6a799a",
+    "persona": "System Architect",
+    "title": "給与計算システム向け双方向APIハブ",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】国内給与（ COMPANY等）との連携が手動CSVでミスが多い。\n\n【解決案】BTP (Integration Suite) を介してECのマスター変更を特定し、給与システムへ自動マッピング連携する。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "給与自動化は人事給与チームの悲願であり、高額なSI案件として受注しやすい。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "マッピング定義",
+        "tasks": [
+          {
+            "name": "国内給与システムのインターフェース仕様確認",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "EC項目のデータマッピング・変換仕様定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "仕様確認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2-3",
+        "phase": "BTP開発",
+        "tasks": [
+          {
+            "name": "Integration Flowの開発と暗号化設定",
+            "duration": "6週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "定義完了後"
+          },
+          {
+            "name": "検証用ペイロール環境でのダミーデータ連携テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "開発完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 4",
+        "phase": "並行稼働",
+        "tasks": [
+          {
+            "name": "旧新システムでの結果突合テスト（並行稼働）",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "連携テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約800万円〜",
+    "created_at": "2026-02-25T18:07:27.632688+00:00",
+    "updated_at": "2026-02-25T18:15:03.240251+00:00"
+  },
+  {
+    "id": "6ceb5b21-e238-421e-9140-078ec13eb4d4",
+    "persona": "System Architect",
+    "title": "IDaaS連携による入退社プロセスの完全自動化",
+    "target": "新規開拓",
+    "modules": "Employee Central",
+    "approach": "【課題】入社時や異動時にアカウント付与が手作業で行われ、セキュリティリスクと業務遅延が発生。\n\n【解決案】Employee Centralをマスタとし、Azure ADやOkta(IDaaS)との自動同期API(SCIM)を設定する。",
+    "rationale": "情報システム部と人事部の双方の工数を劇的に削減でき、セキュリティガバナンス強化という経営層の刺さる価値を提供できる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "システム要件定義",
+        "tasks": [
+          {
+            "name": "API連携方式・認証方式の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "権限マトリクスとマッピング定義",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "方式策定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "SCIM連携実装",
+        "tasks": [
+          {
+            "name": "Azure AD/Okta側の自動同期設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "例外エラーハンドリング・ログ実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "同期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "検証・移行",
+        "tasks": [
+          {
+            "name": "テスト用ダミーデータでの結合テスト",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "実装完了"
+          },
+          {
+            "name": "本番環境へのデプロイと情シス引き継ぎ",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約400万円〜",
+    "created_at": "2026-02-25T18:15:06.453446+00:00",
+    "updated_at": "2026-02-25T18:15:06.453446+00:00"
+  },
+  {
+    "id": "31bd0dd6-8b56-4989-bd2f-8c6af3ae023f",
+    "persona": "System Architect",
+    "title": "IDaaS連携による入退社プロセスの完全自動化",
+    "target": "新規開拓",
+    "modules": "Employee Central",
+    "approach": "【課題】入社時や異動時にアカウント付与が手作業で行われ、セキュリティリスクと業務遅延が発生。\n\n【解決案】Employee Centralをマスタとし、Azure ADやOkta(IDaaS)との自動同期API(SCIM)を設定する。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "情報システム部と人事部の双方の工数を劇的に削減でき、セキュリティガバナンス強化という経営層の刺さる価値を提供できる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "システム要件定義",
+        "tasks": [
+          {
+            "name": "API連携方式・認証方式の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "権限マトリクスとマッピング定義",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "方式策定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "SCIM連携実装",
+        "tasks": [
+          {
+            "name": "Azure AD/Okta側の自動同期設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "例外エラーハンドリング・ログ実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "同期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "検証・移行",
+        "tasks": [
+          {
+            "name": "テスト用ダミーデータでの結合テスト",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "実装完了"
+          },
+          {
+            "name": "本番環境へのデプロイと情シス引き継ぎ",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約400万円〜",
+    "created_at": "2026-02-25T18:07:41.668149+00:00",
+    "updated_at": "2026-02-25T18:15:25.277261+00:00"
+  },
+  {
+    "id": "b0db5a8a-a5b9-447f-9410-b436dbe20ee7",
+    "persona": "Financial Analyst",
+    "title": "ライセンス使用率分析とコスト最適化ツール",
+    "target": "既存顧客",
+    "modules": "Platform (Foundation)",
+    "approach": "【課題】退職者の残存アカウント等により無駄なライセンス費用が発生している。\n\n【解決案】利用頻度や最終ログイン日をAPIで自動抽出し、不要ライセンスを特定するレポートを提供する。",
+    "rationale": "SaaSのコスト最適化はCFOの関心事であり、浮いた予算を別Add-onに回せる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "現状把握",
+        "tasks": [
+          {
+            "name": "ライセンス契約状況とログイン状況の抽出",
+            "duration": "4週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "分析・試算",
+        "tasks": [
+          {
+            "name": "休眠アカウントのリストアップ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "アカウント停止要否の判定とコスト試算",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "リストアップ完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "クリーンアップ",
+        "tasks": [
+          {
+            "name": "不要アカウントの無効化処理",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "判定完了"
+          },
+          {
+            "name": "効果測定レポートの提出",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "無効化完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約80万円",
+    "created_at": "2026-02-25T18:15:27.490617+00:00",
+    "updated_at": "2026-02-25T18:15:27.490617+00:00"
+  },
+  {
+    "id": "ad27deba-70a9-4144-9380-c6e8e3b2d83f",
+    "persona": "Data Scientist",
+    "title": "退職リスク予測モデルの実装",
+    "target": "既存顧客",
+    "modules": "Employee Central, Performance & Goals",
+    "approach": "【課題】キーパーソンの突然の退職を事前に察知できない。\n\n【解決案】SF内の給与・評価推移データを抽出し、機械学習で高リスク従業員をアラートするモデルを構築。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "データドリブンな人事戦略の中核となり、高度な活用を望む層へアップセルしやすい。",
+    "schedule": [
+      {
+        "month": "Month 1-2",
+        "phase": "データ抽出・加工",
+        "tasks": [
+          {
+            "name": "必要データセットの特定とマスク処理",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "特徴量エンジニアリングと前処理",
+            "duration": "4週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "データ抽出完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "モデル構築",
+        "tasks": [
+          {
+            "name": "機械学習モデルの学習および精度検証",
+            "duration": "4週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "前処理完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 4",
+        "phase": "ダッシュボード統合",
+        "tasks": [
+          {
+            "name": "予測スコアのアラート画面への埋め込み",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "モデル完成後"
+          },
+          {
+            "name": "HRBP向けアクションプラン策定支援",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "画面実装完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "中難易度（一部アドオン開発やAPI連携が必要なため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 3,
+    "cost": "約600万円",
+    "created_at": "2026-02-25T18:07:53.694253+00:00",
+    "updated_at": "2026-02-25T18:15:43.305822+00:00"
+  },
+  {
+    "id": "29f72f8e-434f-4a7d-bcb6-0bc1e782a587",
+    "persona": "Operations Manager",
+    "title": "組織改編データ移行の事前バリデーションツール",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】大量のCSVインポートエラーで人事の残業が常態化。\n\n【解決案】インポート前にSuccessFactorsのデータ要件（必須項目・マスター整合性）をローカルで自動チェックするExcel/Webアプリを導入。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "人事担当者のダイレクトなペインポイントを解消するため、成約率が極めて高い。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "仕様定義",
+        "tasks": [
+          {
+            "name": "過去のエラーログ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "なし"
+          },
+          {
+            "name": "バリデーションルール一覧の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "開発・テスト",
+        "tasks": [
+          {
+            "name": "チェックツールの実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "過去データを用いた単体テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "実地運用",
+        "tasks": [
+          {
+            "name": "次期組織改編データでのプレテスト",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "開発完了"
+          },
+          {
+            "name": "操作マニュアル提供と運用開始",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "プレテスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約100万円",
+    "created_at": "2026-02-25T17:20:32.576957+00:00",
+    "updated_at": "2026-02-25T18:15:55.327614+00:00",
+    "review_comment": "Sales & Marketingからの指摘: カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。"
+  },
+  {
+    "id": "55f87f92-417a-4182-8870-bc14dcea97ba",
+    "persona": "System Architect",
+    "title": "給与計算システム向け双方向APIハブ",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】国内給与（ COMPANY等）との連携が手動CSVでミスが多い。\n\n【解決案】BTP (Integration Suite) を介してECのマスター変更を特定し、給与システムへ自動マッピング連携する。",
+    "rationale": "給与自動化は人事給与チームの悲願であり、高額なSI案件として受注しやすい。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "マッピング定義",
+        "tasks": [
+          {
+            "name": "国内給与システムのインターフェース仕様確認",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "EC項目のデータマッピング・変換仕様定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "仕様確認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2-3",
+        "phase": "BTP開発",
+        "tasks": [
+          {
+            "name": "Integration Flowの開発と暗号化設定",
+            "duration": "6週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "定義完了後"
+          },
+          {
+            "name": "検証用ペイロール環境でのダミーデータ連携テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "開発完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 4",
+        "phase": "並行稼働",
+        "tasks": [
+          {
+            "name": "旧新システムでの結果突合テスト（並行稼働）",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "連携テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約800万円〜",
+    "created_at": "2026-02-25T18:16:01.549124+00:00",
+    "updated_at": "2026-02-25T18:16:01.549124+00:00"
+  },
+  {
+    "id": "6a785e98-83af-495a-9a7f-dac522fa3321",
+    "persona": "HR Specialist",
+    "title": "評価プロセス可視化ダッシュボードの導入",
+    "target": "既存顧客",
+    "modules": "Performance & Goals",
+    "approach": "【課題】評価面談時、期中の目標変更やフィードバックの経緯が不透明で従業員の不満に繋がる。\n\n【解決案】Performance & Goalsの標準レポート機能を拡張し、目標変更履歴と連続的フィードバック(CPM)のデータを一覧できるマネージャー向けダッシュボードを構築する。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "評価の納得度低下という明確な人事課題を解決でき、既存顧客のモジュール活用度アップによるリテンション強化に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "課題アセスメント",
+        "tasks": [
+          {
+            "name": "評価シートの現状分析",
+            "duration": "1週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "マネージャー層への課題ヒアリング",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "設計・構築",
+        "tasks": [
+          {
+            "name": "ダッシュボード要件定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "システム構築・レポート作成",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "要件定義承認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "テスト・展開",
+        "tasks": [
+          {
+            "name": "UAT（受入テスト）の実施",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "構築完了"
+          },
+          {
+            "name": "説明会実施と全社展開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "UAT完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約150万円",
+    "created_at": "2026-02-25T18:08:09.718218+00:00",
+    "updated_at": "2026-02-25T18:16:14.353064+00:00"
+  },
+  {
+    "id": "d92d8452-84a6-4b0a-899a-49677b6a0cef",
+    "persona": "Sales & Marketing",
+    "title": "内定者エンゲージメント向け専用ポータルのクイック導入",
+    "target": "新規開拓",
+    "modules": "Onboarding",
+    "approach": "【課題】内定承諾から入社までの辞退率が高い。\n\n【解決案】Onboardingを活用し、内定者専用のモバイルフレンドリーなポータルを短期構築する。",
+    "rationale": "採用コスト削減という明確なROIを提示でき、ドアノック商材として強力。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "ポータル設計",
+        "tasks": [
+          {
+            "name": "ベストプラクティスUIの提示・選択",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "掲載コンテンツ（動画等）の準備",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "UI決定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "システム構築",
+        "tasks": [
+          {
+            "name": "Onboardingモジュール初期設定",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "コンテンツ登録・リンク設定",
+            "duration": "1週間",
+            "raci": "V: R / C: A",
+            "dependency": "初期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "公開検証",
+        "tasks": [
+          {
+            "name": "モバイル端末・PCでの表示テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "構築完了後"
+          },
+          {
+            "name": "内定者向け運用マニュアル展開・公開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約250万円",
+    "created_at": "2026-02-25T18:16:21.576947+00:00",
+    "updated_at": "2026-02-25T18:16:21.576947+00:00"
+  },
+  {
+    "id": "065e5085-58eb-4a2b-afdc-728d897a9f4f",
+    "persona": "Sales & Marketing",
+    "title": "内定者エンゲージメント向け専用ポータルのクイック導入",
+    "target": "新規開拓",
+    "modules": "Onboarding",
+    "approach": "【課題】内定承諾から入社までの辞退率が高い。\n\n【解決案】Onboardingを活用し、内定者専用のモバイルフレンドリーなポータルを短期構築する。\n\n【追加検討】更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。",
+    "rationale": "採用コスト削減という明確なROIを提示でき、ドアノック商材として強力。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "ポータル設計",
+        "tasks": [
+          {
+            "name": "ベストプラクティスUIの提示・選択",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "掲載コンテンツ（動画等）の準備",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "UI決定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "システム構築",
+        "tasks": [
+          {
+            "name": "Onboardingモジュール初期設定",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "コンテンツ登録・リンク設定",
+            "duration": "1週間",
+            "raci": "V: R / C: A",
+            "dependency": "初期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "公開検証",
+        "tasks": [
+          {
+            "name": "モバイル端末・PCでの表示テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "構築完了後"
+          },
+          {
+            "name": "内定者向け運用マニュアル展開・公開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約250万円",
+    "created_at": "2026-02-25T17:27:46.326644+00:00",
+    "updated_at": "2026-02-25T18:16:28.386150+00:00",
+    "review_comment": "System Architectからの指摘: カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。"
+  },
+  {
+    "id": "ca82a65a-c74e-43fe-b321-2ba1ba9ed32d",
+    "persona": "Sales & Marketing",
+    "title": "内定者エンゲージメント向け専用ポータルのクイック導入",
+    "target": "新規開拓",
+    "modules": "Onboarding",
+    "approach": "【課題】内定承諾から入社までの辞退率が高い。\n\n【解決案】Onboardingを活用し、内定者専用のモバイルフレンドリーなポータルを短期構築する。",
+    "rationale": "採用コスト削減という明確なROIを提示でき、ドアノック商材として強力。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "ポータル設計",
+        "tasks": [
+          {
+            "name": "ベストプラクティスUIの提示・選択",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "掲載コンテンツ（動画等）の準備",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "UI決定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "システム構築",
+        "tasks": [
+          {
+            "name": "Onboardingモジュール初期設定",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "コンテンツ登録・リンク設定",
+            "duration": "1週間",
+            "raci": "V: R / C: A",
+            "dependency": "初期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "公開検証",
+        "tasks": [
+          {
+            "name": "モバイル端末・PCでの表示テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "構築完了後"
+          },
+          {
+            "name": "内定者向け運用マニュアル展開・公開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約250万円",
+    "created_at": "2026-02-25T18:08:24.748819+00:00",
+    "updated_at": "2026-02-25T18:16:37.613035+00:00",
+    "review_comment": "Operations Managerからの指摘: 更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。"
+  },
+  {
+    "id": "3776b87e-cd94-411c-ad5c-ddd2f47ddaab",
+    "persona": "Financial Analyst",
+    "title": "ライセンス使用率分析とコスト最適化ツール",
+    "target": "既存顧客",
+    "modules": "Platform (Foundation)",
+    "approach": "【課題】退職者の残存アカウント等により無駄なライセンス費用が発生している。\n\n【解決案】利用頻度や最終ログイン日をAPIで自動抽出し、不要ライセンスを特定するレポートを提供する。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "SaaSのコスト最適化はCFOの関心事であり、浮いた予算を別Add-onに回せる。",
+    "schedule": {
+      "durations": 7,
+      "tracks": [
+        {
+          "name": "全体スケジュール",
+          "items": [
+            {
+              "name": "要件定義",
+              "start": 1,
+              "end": 1
+            },
+            {
+              "name": "設計",
+              "start": 2,
+              "end": 3
+            },
+            {
+              "name": "構築",
+              "start": 4,
+              "end": 6
+            },
+            {
+              "name": "テスト・本番",
+              "start": 7,
+              "end": 7
+            }
+          ]
+        },
+        {
+          "name": "ベンダー (導入)",
+          "items": [
+            {
+              "name": "要件定義支援",
+              "start": 1,
+              "end": 1
+            },
+            {
+              "name": "システム設計",
+              "start": 2,
+              "end": 3
+            },
+            {
+              "name": "実装・単体テスト",
+              "start": 4,
+              "end": 6
+            },
+            {
+              "name": "総合テスト・稼働支援",
+              "start": 7,
+              "end": 7
+            }
+          ]
+        },
+        {
+          "name": "企業側 (人事・情シス)",
+          "items": [
+            {
+              "name": "業務要件確定",
+              "start": 1,
+              "end": 1
+            },
+            {
+              "name": "データ移行方針決定",
+              "start": 2,
+              "end": 3
+            },
+            {
+              "name": "データ移行作業",
+              "start": 3,
+              "end": 6
+            },
+            {
+              "name": "UAT・本番移行判定",
+              "start": 7,
+              "end": 7
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "phase": "要件定義",
+          "name": "プロジェクト憲章・体制構築",
+          "duration": "2週間",
+          "dependency": "なし",
+          "actor": "全体"
+        },
+        {
+          "phase": "要件定義",
+          "name": "業務要件定義・ギャップ分析",
+          "duration": "4週間",
+          "dependency": "体制構築後",
+          "actor": "ベンダー"
+        },
+        {
+          "phase": "要件定義",
+          "name": "システム外運用ルールの策定",
+          "duration": "3週間",
+          "dependency": "ギャップ分析後",
+          "actor": "顧客"
+        },
+        {
+          "phase": "設計",
+          "name": "統合データモデル設計",
+          "duration": "5週間",
+          "dependency": "要件定義完了",
+          "actor": "ベンダー"
+        },
+        {
+          "phase": "構築",
+          "name": "コア機能実装・連携API開発",
+          "duration": "16週間",
+          "dependency": "設計完了",
+          "actor": "ベンダー"
+        },
+        {
+          "phase": "構築",
+          "name": "テストシナリオ作成",
+          "duration": "3週間",
+          "dependency": "実装後半",
+          "actor": "顧客"
+        },
+        {
+          "phase": "構築",
+          "name": "本番系データセットアップ",
+          "duration": "4週間",
+          "dependency": "開発完了前",
+          "actor": "顧客"
+        },
+        {
+          "phase": "テスト・本番",
+          "name": "システム結合・総合テスト",
+          "duration": "2週間",
+          "dependency": "実装完了",
+          "actor": "ベンダー"
+        },
+        {
+          "phase": "テスト・本番",
+          "name": "UAT（ユーザー受入テスト）",
+          "duration": "2週間",
+          "dependency": "総合テスト後",
+          "actor": "顧客"
+        }
+      ]
+    },
+    "cost": "約80万円",
+    "created_at": "2026-02-25T16:28:33.790902+00:00",
+    "updated_at": "2026-02-25T18:16:41.415431+00:00",
+    "difficulty": "中難易度（現場への操作トレーニングが主となるため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "review_comment": "HR Specialistからの指摘: カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。"
+  },
+  {
+    "id": "83f283b7-5ec4-46cb-90dd-2cdbbb98c74b",
+    "persona": "Operations Manager",
+    "title": "自動面接スケジュール調整Bot",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】候補者と面接官のOutlook予定表のすり合わせが手動で発生。\n\n【解決案】Recruitingのステータス変更をトリガーにし、Microsoft Graph API経由で空き時間を自動抽出・送信する。",
+    "rationale": "採用担当の業務負担を半減させる特効薬。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "API仕様定義",
+        "tasks": [
+          {
+            "name": "O365とのセキュリティ確認とWebHook設計",
+            "duration": "3週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "面接フローのプロセス定義",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "Bot開発",
+        "tasks": [
+          {
+            "name": "空き時間抽出・調整ロジック実装",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "テスト候補者を用いた受入テスト",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "運用切り替え",
+        "tasks": [
+          {
+            "name": "本番デプロイとエラーモニタリング",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "受入テスト完了"
+          },
+          {
+            "name": "現場担当者への新フロー周知",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "デプロイ完了"
+          }
+        ]
+      }
+    ],
+    "difficulty": "中難易度（一部アドオン開発やAPI連携が必要なため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 3,
+    "cost": "約350万円",
+    "created_at": "2026-02-25T18:08:37.776273+00:00",
+    "updated_at": "2026-02-25T18:16:55.642917+00:00",
+    "review_comment": "System Architectからの指摘: カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。"
+  },
+  {
+    "id": "d2c83f5d-02f5-4f53-9410-918f9e7031f6",
+    "persona": "Financial Analyst",
+    "title": "ライセンス使用率分析とコスト最適化ツール",
+    "target": "既存顧客",
+    "modules": "Platform (Foundation)",
+    "approach": "【課題】退職者の残存アカウント等により無駄なライセンス費用が発生している。\n\n【解決案】利用頻度や最終ログイン日をAPIで自動抽出し、不要ライセンスを特定するレポートを提供する。\n\n【追加検討】更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。",
+    "rationale": "SaaSのコスト最適化はCFOの関心事であり、浮いた予算を別Add-onに回せる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "現状把握",
+        "tasks": [
+          {
+            "name": "ライセンス契約状況とログイン状況の抽出",
+            "duration": "4週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "分析・試算",
+        "tasks": [
+          {
+            "name": "休眠アカウントのリストアップ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "アカウント停止要否の判定とコスト試算",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "リストアップ完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "クリーンアップ",
+        "tasks": [
+          {
+            "name": "不要アカウントの無効化処理",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "判定完了"
+          },
+          {
+            "name": "効果測定レポートの提出",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "無効化完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約80万円",
+    "created_at": "2026-02-25T18:08:54.806099+00:00",
+    "updated_at": "2026-02-25T18:17:03.454441+00:00"
+  },
+  {
+    "id": "ae4dfb20-07c6-425c-a0f8-e0708f3edf9e",
+    "persona": "Operations Manager",
+    "title": "組織改編データ移行の事前バリデーションツール",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】大量のCSVインポートエラーで人事の残業が常態化。\n\n【解決案】インポート前にSuccessFactorsのデータ要件（必須項目・マスター整合性）をローカルで自動チェックするExcel/Webアプリを導入。",
+    "rationale": "人事担当者のダイレクトなペインポイントを解消するため、成約率が極めて高い。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "仕様定義",
+        "tasks": [
+          {
+            "name": "過去のエラーログ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "なし"
+          },
+          {
+            "name": "バリデーションルール一覧の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "開発・テスト",
+        "tasks": [
+          {
+            "name": "チェックツールの実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "過去データを用いた単体テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "実地運用",
+        "tasks": [
+          {
+            "name": "次期組織改編データでのプレテスト",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "開発完了"
+          },
+          {
+            "name": "操作マニュアル提供と運用開始",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "プレテスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "中難易度（一部アドオン開発やAPI連携が必要なため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約100万円",
+    "created_at": "2026-02-25T18:09:14.840261+00:00",
+    "updated_at": "2026-02-25T18:17:15.680455+00:00",
+    "review_comment": "Sales & Marketingからの指摘: カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。"
+  },
+  {
+    "id": "0e1e191d-eb49-4a27-9263-5a0429ccb407",
+    "persona": "Data Scientist",
+    "title": "退職リスク予測モデルの実装",
+    "target": "既存顧客",
+    "modules": "Employee Central, Performance & Goals",
+    "approach": "【課題】キーパーソンの突然の退職を事前に察知できない。\n\n【解決案】SF内の給与・評価推移データを抽出し、機械学習で高リスク従業員をアラートするモデルを構築。\n\n【追加検討】更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。",
+    "rationale": "データドリブンな人事戦略の中核となり、高度な活用を望む層へアップセルしやすい。",
+    "schedule": [
+      {
+        "month": "Month 1-2",
+        "phase": "データ抽出・加工",
+        "tasks": [
+          {
+            "name": "必要データセットの特定とマスク処理",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "特徴量エンジニアリングと前処理",
+            "duration": "4週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "データ抽出完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "モデル構築",
+        "tasks": [
+          {
+            "name": "機械学習モデルの学習および精度検証",
+            "duration": "4週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "前処理完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 4",
+        "phase": "ダッシュボード統合",
+        "tasks": [
+          {
+            "name": "予測スコアのアラート画面への埋め込み",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "モデル完成後"
+          },
+          {
+            "name": "HRBP向けアクションプラン策定支援",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "画面実装完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約600万円",
+    "created_at": "2026-02-25T17:34:33.368571+00:00",
+    "updated_at": "2026-02-25T18:17:21.501367+00:00",
+    "review_comment": "HR Specialistからの指摘: 導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。"
+  },
+  {
+    "id": "593d899b-e239-4870-9f02-57a7c7efea54",
+    "persona": "Operations Manager",
+    "title": "自動面接スケジュール調整Bot",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】候補者と面接官のOutlook予定表のすり合わせが手動で発生。\n\n【解決案】Recruitingのステータス変更をトリガーにし、Microsoft Graph API経由で空き時間を自動抽出・送信する。",
+    "rationale": "採用担当の業務負担を半減させる特効薬。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "API仕様定義",
+        "tasks": [
+          {
+            "name": "O365とのセキュリティ確認とWebHook設計",
+            "duration": "3週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "面接フローのプロセス定義",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "Bot開発",
+        "tasks": [
+          {
+            "name": "空き時間抽出・調整ロジック実装",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "テスト候補者を用いた受入テスト",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "運用切り替え",
+        "tasks": [
+          {
+            "name": "本番デプロイとエラーモニタリング",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "受入テスト完了"
+          },
+          {
+            "name": "現場担当者への新フロー周知",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "デプロイ完了"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 3,
+    "cost": "約350万円",
+    "created_at": "2026-02-25T18:17:34.711843+00:00",
+    "updated_at": "2026-02-25T18:17:34.711843+00:00"
+  },
+  {
+    "id": "20b919d3-045e-4b7c-b2d4-a37e69aed52c",
+    "persona": "Data Scientist",
+    "title": "AI面接官による初期スクリーニング補助",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】大量のエントリーシートの評価基準がブレて人事工数が圧迫される。\n\n【解決案】レジュメテキストと過去実績をLLMで解析しマッチ度を事前スコアリングするアドオン。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "生成AI技術をエンタープライズHRに組み込む先進事例としてブランディングに貢献。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "PoC",
+        "tasks": [
+          {
+            "name": "コンピテンシー定義と過去データ抽出",
+            "duration": "3週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "LLMプロンプトの基礎構築",
+            "duration": "1週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "データ抽出完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "システム結合",
+        "tasks": [
+          {
+            "name": "SF RecruitingとのAPI連携実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "実際の応募データを用いたスコア妥当性検証",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "連携完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "実運用",
+        "tasks": [
+          {
+            "name": "バイアスチェックと本番リリース",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "妥当性検証完了"
+          },
+          {
+            "name": "面接官向けの見方ガイド展開と運用開始",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "リリース後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約500万円",
+    "created_at": "2026-02-25T18:09:43.880070+00:00",
+    "updated_at": "2026-02-25T18:17:39.520192+00:00"
+  },
+  {
+    "id": "6cb8a7d6-9587-4dbd-b4e0-1ec7255e3501",
+    "persona": "System Architect",
+    "title": "給与計算システム向け双方向APIハブ",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】国内給与（ COMPANY等）との連携が手動CSVでミスが多い。\n\n【解決案】BTP (Integration Suite) を介してECのマスター変更を特定し、給与システムへ自動マッピング連携する。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "給与自動化は人事給与チームの悲願であり、高額なSI案件として受注しやすい。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "マッピング定義",
+        "tasks": [
+          {
+            "name": "国内給与システムのインターフェース仕様確認",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "EC項目のデータマッピング・変換仕様定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "仕様確認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2-3",
+        "phase": "BTP開発",
+        "tasks": [
+          {
+            "name": "Integration Flowの開発と暗号化設定",
+            "duration": "6週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "定義完了後"
+          },
+          {
+            "name": "検証用ペイロール環境でのダミーデータ連携テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "開発完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 4",
+        "phase": "並行稼働",
+        "tasks": [
+          {
+            "name": "旧新システムでの結果突合テスト（並行稼働）",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "連携テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約800万円〜",
+    "created_at": "2026-02-25T18:04:50.402392+00:00",
+    "updated_at": "2026-02-25T18:17:50.752035+00:00",
+    "review_comment": "Operations Managerからの指摘: カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。"
+  },
+  {
+    "id": "0222d9f5-3d69-40f6-b2ce-fcb9d0a4babc",
+    "persona": "System Architect",
+    "title": "給与計算システム向け双方向APIハブ",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】国内給与（ COMPANY等）との連携が手動CSVでミスが多い。\n\n【解決案】BTP (Integration Suite) を介してECのマスター変更を特定し、給与システムへ自動マッピング連携する。\n\n【追加検討】更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。",
+    "rationale": "給与自動化は人事給与チームの悲願であり、高額なSI案件として受注しやすい。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "マッピング定義",
+        "tasks": [
+          {
+            "name": "国内給与システムのインターフェース仕様確認",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "EC項目のデータマッピング・変換仕様定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "仕様確認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2-3",
+        "phase": "BTP開発",
+        "tasks": [
+          {
+            "name": "Integration Flowの開発と暗号化設定",
+            "duration": "6週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "定義完了後"
+          },
+          {
+            "name": "検証用ペイロール環境でのダミーデータ連携テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "開発完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 4",
+        "phase": "並行稼働",
+        "tasks": [
+          {
+            "name": "旧新システムでの結果突合テスト（並行稼働）",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "連携テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約800万円〜",
+    "created_at": "2026-02-25T18:09:59.904820+00:00",
+    "updated_at": "2026-02-25T18:18:01.553097+00:00"
+  },
+  {
+    "id": "cc306fba-63d6-4ab6-bc98-8c1b365f92a8",
+    "persona": "Operations Manager",
+    "title": "自動面接スケジュール調整Bot",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】候補者と面接官のOutlook予定表のすり合わせが手動で発生。\n\n【解決案】Recruitingのステータス変更をトリガーにし、Microsoft Graph API経由で空き時間を自動抽出・送信する。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "採用担当の業務負担を半減させる特効薬。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "API仕様定義",
+        "tasks": [
+          {
+            "name": "O365とのセキュリティ確認とWebHook設計",
+            "duration": "3週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "面接フローのプロセス定義",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "Bot開発",
+        "tasks": [
+          {
+            "name": "空き時間抽出・調整ロジック実装",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "テスト候補者を用いた受入テスト",
+            "duration": "1週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "運用切り替え",
+        "tasks": [
+          {
+            "name": "本番デプロイとエラーモニタリング",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "受入テスト完了"
+          },
+          {
+            "name": "現場担当者への新フロー周知",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "デプロイ完了"
+          }
+        ]
+      }
+    ],
+    "difficulty": "中難易度（一部アドオン開発やAPI連携が必要なため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約350万円",
+    "created_at": "2026-02-25T17:25:08.040013+00:00",
+    "updated_at": "2026-02-25T18:18:07.769402+00:00",
+    "review_comment": "Sales & Marketingからの指摘: 更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。"
+  },
+  {
+    "id": "e53762be-72bc-4361-bd5a-58057973b24d",
+    "persona": "System Architect",
+    "title": "IDaaS連携による入退社プロセスの完全自動化",
+    "target": "新規開拓",
+    "modules": "Employee Central",
+    "approach": "【課題】入社時や異動時にアカウント付与が手作業で行われ、セキュリティリスクと業務遅延が発生。\n\n【解決案】Employee Centralをマスタとし、Azure ADやOkta(IDaaS)との自動同期API(SCIM)を設定する。",
+    "rationale": "情報システム部と人事部の双方の工数を劇的に削減でき、セキュリティガバナンス強化という経営層の刺さる価値を提供できる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "システム要件定義",
+        "tasks": [
+          {
+            "name": "API連携方式・認証方式の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "権限マトリクスとマッピング定義",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "方式策定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "SCIM連携実装",
+        "tasks": [
+          {
+            "name": "Azure AD/Okta側の自動同期設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "例外エラーハンドリング・ログ実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "同期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "検証・移行",
+        "tasks": [
+          {
+            "name": "テスト用ダミーデータでの結合テスト",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "実装完了"
+          },
+          {
+            "name": "本番環境へのデプロイと情シス引き継ぎ",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約400万円〜",
+    "created_at": "2026-02-25T18:18:22.794638+00:00",
+    "updated_at": "2026-02-25T18:18:22.794638+00:00"
+  },
+  {
+    "id": "572850b4-cac4-488e-b8dc-a7300f6a0e19",
+    "persona": "System Architect",
+    "title": "IDaaS連携による入退社プロセスの完全自動化",
+    "target": "新規開拓",
+    "modules": "Employee Central",
+    "approach": "【課題】入社時や異動時にアカウント付与が手作業で行われ、セキュリティリスクと業務遅延が発生。\n\n【解決案】Employee Centralをマスタとし、Azure ADやOkta(IDaaS)との自動同期API(SCIM)を設定する。",
+    "rationale": "情報システム部と人事部の双方の工数を劇的に削減でき、セキュリティガバナンス強化という経営層の刺さる価値を提供できる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "システム要件定義",
+        "tasks": [
+          {
+            "name": "API連携方式・認証方式の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "権限マトリクスとマッピング定義",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "方式策定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "SCIM連携実装",
+        "tasks": [
+          {
+            "name": "Azure AD/Okta側の自動同期設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "例外エラーハンドリング・ログ実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "同期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "検証・移行",
+        "tasks": [
+          {
+            "name": "テスト用ダミーデータでの結合テスト",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "実装完了"
+          },
+          {
+            "name": "本番環境へのデプロイと情シス引き継ぎ",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約400万円〜",
+    "created_at": "2026-02-25T18:10:16.932171+00:00",
+    "updated_at": "2026-02-25T18:18:42.830198+00:00",
+    "review_comment": "HR Specialistからの指摘: 導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。"
+  },
+  {
+    "id": "b70e8843-9a80-4b1e-acd6-d874f949e924",
+    "persona": "Sales & Marketing",
+    "title": "内定者エンゲージメント向け専用ポータルのクイック導入",
+    "target": "新規開拓",
+    "modules": "Onboarding",
+    "approach": "【課題】内定承諾から入社までの辞退率が高い。\n\n【解決案】Onboardingを活用し、内定者専用のモバイルフレンドリーなポータルを短期構築する。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "採用コスト削減という明確なROIを提示でき、ドアノック商材として強力。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "ポータル設計",
+        "tasks": [
+          {
+            "name": "ベストプラクティスUIの提示・選択",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "掲載コンテンツ（動画等）の準備",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "UI決定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "システム構築",
+        "tasks": [
+          {
+            "name": "Onboardingモジュール初期設定",
+            "duration": "3週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "コンテンツ登録・リンク設定",
+            "duration": "1週間",
+            "raci": "V: R / C: A",
+            "dependency": "初期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "公開検証",
+        "tasks": [
+          {
+            "name": "モバイル端末・PCでの表示テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "構築完了後"
+          },
+          {
+            "name": "内定者向け運用マニュアル展開・公開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "中難易度（一部アドオン開発やAPI連携が必要なため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約250万円",
+    "created_at": "2026-02-25T18:05:08.432962+00:00",
+    "updated_at": "2026-02-25T18:18:54.865285+00:00",
+    "review_comment": "Financial Analystからの指摘: 導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。"
+  },
+  {
+    "id": "22881d06-f9b6-472d-a65f-2f93995d6414",
+    "persona": "System Architect",
+    "title": "IDaaS連携による入退社プロセスの完全自動化",
+    "target": "新規開拓",
+    "modules": "Employee Central",
+    "approach": "【課題】入社時や異動時にアカウント付与が手作業で行われ、セキュリティリスクと業務遅延が発生。\n\n【解決案】Employee Centralをマスタとし、Azure ADやOkta(IDaaS)との自動同期API(SCIM)を設定する。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "情報システム部と人事部の双方の工数を劇的に削減でき、セキュリティガバナンス強化という経営層の刺さる価値を提供できる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "システム要件定義",
+        "tasks": [
+          {
+            "name": "API連携方式・認証方式の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "権限マトリクスとマッピング定義",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "方式策定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "SCIM連携実装",
+        "tasks": [
+          {
+            "name": "Azure AD/Okta側の自動同期設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "例外エラーハンドリング・ログ実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "同期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "検証・移行",
+        "tasks": [
+          {
+            "name": "テスト用ダミーデータでの結合テスト",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "実装完了"
+          },
+          {
+            "name": "本番環境へのデプロイと情シス引き継ぎ",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "cost": "約400万円〜",
+    "created_at": "2026-02-25T18:05:11.183990+00:00",
+    "updated_at": "2026-02-25T18:19:12.670168+00:00"
+  },
+  {
+    "id": "6d9ea3ef-1dae-4d72-9542-21fb2e23a565",
+    "persona": "System Architect",
+    "title": "IDaaS連携による入退社プロセスの完全自動化",
+    "target": "新規開拓",
+    "modules": "Employee Central",
+    "approach": "【課題】入社時や異動時にアカウント付与が手作業で行われ、セキュリティリスクと業務遅延が発生。\n\n【解決案】Employee Centralをマスタとし、Azure ADやOkta(IDaaS)との自動同期API(SCIM)を設定する。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "情報システム部と人事部の双方の工数を劇的に削減でき、セキュリティガバナンス強化という経営層の刺さる価値を提供できる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "システム要件定義",
+        "tasks": [
+          {
+            "name": "API連携方式・認証方式の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "権限マトリクスとマッピング定義",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "方式策定後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "SCIM連携実装",
+        "tasks": [
+          {
+            "name": "Azure AD/Okta側の自動同期設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "例外エラーハンドリング・ログ実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "同期設定完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "検証・移行",
+        "tasks": [
+          {
+            "name": "テスト用ダミーデータでの結合テスト",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "実装完了"
+          },
+          {
+            "name": "本番環境へのデプロイと情シス引き継ぎ",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "テスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約400万円〜",
+    "created_at": "2026-02-25T18:10:51.992402+00:00",
+    "updated_at": "2026-02-25T18:19:26.691527+00:00"
+  },
+  {
+    "id": "d436129c-804b-4190-8fbe-440422d74f1a",
+    "persona": "Data Scientist",
+    "title": "AI面接官による初期スクリーニング補助",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】大量のエントリーシートの評価基準がブレて人事工数が圧迫される。\n\n【解決案】レジュメテキストと過去実績をLLMで解析しマッチ度を事前スコアリングするアドオン。\n\n【追加検討】更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。",
+    "rationale": "生成AI技術をエンタープライズHRに組み込む先進事例としてブランディングに貢献。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "PoC",
+        "tasks": [
+          {
+            "name": "コンピテンシー定義と過去データ抽出",
+            "duration": "3週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "LLMプロンプトの基礎構築",
+            "duration": "1週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "データ抽出完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "システム結合",
+        "tasks": [
+          {
+            "name": "SF RecruitingとのAPI連携実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "実際の応募データを用いたスコア妥当性検証",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "連携完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "実運用",
+        "tasks": [
+          {
+            "name": "バイアスチェックと本番リリース",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "妥当性検証完了"
+          },
+          {
+            "name": "面接官向けの見方ガイド展開と運用開始",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "リリース後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約500万円",
+    "created_at": "2026-02-25T18:05:26.454271+00:00",
+    "updated_at": "2026-02-25T18:19:29.919686+00:00",
+    "review_comment": "Financial Analystからの指摘: カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。"
+  },
+  {
+    "id": "2429d68c-385c-4fdf-b9de-2552a651a0cd",
+    "persona": "Operations Manager",
+    "title": "組織改編データ移行の事前バリデーションツール",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】大量のCSVインポートエラーで人事の残業が常態化。\n\n【解決案】インポート前にSuccessFactorsのデータ要件（必須項目・マスター整合性）をローカルで自動チェックするExcel/Webアプリを導入。",
+    "rationale": "人事担当者のダイレクトなペインポイントを解消するため、成約率が極めて高い。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "仕様定義",
+        "tasks": [
+          {
+            "name": "過去のエラーログ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "なし"
+          },
+          {
+            "name": "バリデーションルール一覧の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "開発・テスト",
+        "tasks": [
+          {
+            "name": "チェックツールの実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "過去データを用いた単体テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "実地運用",
+        "tasks": [
+          {
+            "name": "次期組織改編データでのプレテスト",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "開発完了"
+          },
+          {
+            "name": "操作マニュアル提供と運用開始",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "プレテスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "中難易度（一部アドオン開発やAPI連携が必要なため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約100万円",
+    "created_at": "2026-02-25T18:19:46.942974+00:00",
+    "updated_at": "2026-02-25T18:19:46.942974+00:00"
+  },
+  {
+    "id": "fbe15a46-3515-46f2-8ce9-d75ba116109b",
+    "persona": "Data Scientist",
+    "title": "AI面接官による初期スクリーニング補助",
+    "target": "新規開拓",
+    "modules": "Recruiting",
+    "approach": "【課題】大量のエントリーシートの評価基準がブレて人事工数が圧迫される。\n\n【解決案】レジュメテキストと過去実績をLLMで解析しマッチ度を事前スコアリングするアドオン。",
+    "rationale": "生成AI技術をエンタープライズHRに組み込む先進事例としてブランディングに貢献。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "PoC",
+        "tasks": [
+          {
+            "name": "コンピテンシー定義と過去データ抽出",
+            "duration": "3週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "LLMプロンプトの基礎構築",
+            "duration": "1週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "データ抽出完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "システム結合",
+        "tasks": [
+          {
+            "name": "SF RecruitingとのAPI連携実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "実際の応募データを用いたスコア妥当性検証",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "連携完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "実運用",
+        "tasks": [
+          {
+            "name": "バイアスチェックと本番リリース",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "妥当性検証完了"
+          },
+          {
+            "name": "面接官向けの見方ガイド展開と運用開始",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "リリース後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約500万円",
+    "created_at": "2026-02-25T18:11:22.042021+00:00",
+    "updated_at": "2026-02-25T18:19:58.965410+00:00",
+    "review_comment": "Sales & Marketingからの指摘: 導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。"
+  },
+  {
+    "id": "3e385976-f1b5-40fd-bd95-92f145376739",
+    "persona": "Financial Analyst",
+    "title": "ライセンス使用率分析とコスト最適化ツール",
+    "target": "既存顧客",
+    "modules": "Platform (Foundation)",
+    "approach": "【課題】退職者の残存アカウント等により無駄なライセンス費用が発生している。\n\n【解決案】利用頻度や最終ログイン日をAPIで自動抽出し、不要ライセンスを特定するレポートを提供する。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "SaaSのコスト最適化はCFOの関心事であり、浮いた予算を別Add-onに回せる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "現状把握",
+        "tasks": [
+          {
+            "name": "ライセンス契約状況とログイン状況の抽出",
+            "duration": "4週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "分析・試算",
+        "tasks": [
+          {
+            "name": "休眠アカウントのリストアップ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "アカウント停止要否の判定とコスト試算",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "リストアップ完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "クリーンアップ",
+        "tasks": [
+          {
+            "name": "不要アカウントの無効化処理",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "判定完了"
+          },
+          {
+            "name": "効果測定レポートの提出",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "無効化完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約80万円",
+    "created_at": "2026-02-25T18:05:41.485757+00:00",
+    "updated_at": "2026-02-25T18:20:07.766147+00:00"
+  },
+  {
+    "id": "4c34103d-1337-4906-8f84-70b9ac90b2be",
+    "persona": "Financial Analyst",
+    "title": "ライセンス使用率分析とコスト最適化ツール",
+    "target": "既存顧客",
+    "modules": "Platform (Foundation)",
+    "approach": "【課題】退職者の残存アカウント等により無駄なライセンス費用が発生している。\n\n【解決案】利用頻度や最終ログイン日をAPIで自動抽出し、不要ライセンスを特定するレポートを提供する。",
+    "rationale": "SaaSのコスト最適化はCFOの関心事であり、浮いた予算を別Add-onに回せる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "現状把握",
+        "tasks": [
+          {
+            "name": "ライセンス契約状況とログイン状況の抽出",
+            "duration": "4週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "分析・試算",
+        "tasks": [
+          {
+            "name": "休眠アカウントのリストアップ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "アカウント停止要否の判定とコスト試算",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "リストアップ完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "クリーンアップ",
+        "tasks": [
+          {
+            "name": "不要アカウントの無効化処理",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "判定完了"
+          },
+          {
+            "name": "効果測定レポートの提出",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "無効化完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約80万円",
+    "created_at": "2026-02-25T18:11:36.088743+00:00",
+    "updated_at": "2026-02-25T18:20:20.001727+00:00",
+    "review_comment": "HR Specialistからの指摘: 更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。"
+  },
+  {
+    "id": "f048fb24-f38b-49f1-97fd-5c681180f040",
+    "persona": "HR Specialist",
+    "title": "評価プロセス可視化ダッシュボードの導入",
+    "target": "既存顧客",
+    "modules": "Performance & Goals",
+    "approach": "【課題】評価面談時、期中の目標変更やフィードバックの経緯が不透明で従業員の不満に繋がる。\n\n【解決案】Performance & Goalsの標準レポート機能を拡張し、目標変更履歴と連続的フィードバック(CPM)のデータを一覧できるマネージャー向けダッシュボードを構築する。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "評価の納得度低下という明確な人事課題を解決でき、既存顧客のモジュール活用度アップによるリテンション強化に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "課題アセスメント",
+        "tasks": [
+          {
+            "name": "評価シートの現状分析",
+            "duration": "1週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "マネージャー層への課題ヒアリング",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "設計・構築",
+        "tasks": [
+          {
+            "name": "ダッシュボード要件定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "システム構築・レポート作成",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "要件定義承認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "テスト・展開",
+        "tasks": [
+          {
+            "name": "UAT（受入テスト）の実施",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "構築完了"
+          },
+          {
+            "name": "説明会実施と全社展開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "UAT完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約150万円",
+    "created_at": "2026-02-25T18:02:56.118549+00:00",
+    "updated_at": "2026-02-25T18:20:23.809573+00:00"
+  },
+  {
+    "id": "68d90f75-4e93-466f-a2a0-79b3329077e3",
+    "persona": "HR Specialist",
+    "title": "評価プロセス可視化ダッシュボードの導入",
+    "target": "既存顧客",
+    "modules": "Performance & Goals",
+    "approach": "【課題】評価面談時、期中の目標変更やフィードバックの経緯が不透明で従業員の不満に繋がる。\n\n【解決案】Performance & Goalsの標準レポート機能を拡張し、目標変更履歴と連続的フィードバック(CPM)のデータを一覧できるマネージャー向けダッシュボードを構築する。",
+    "rationale": "評価の納得度低下という明確な人事課題を解決でき、既存顧客のモジュール活用度アップによるリテンション強化に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "課題アセスメント",
+        "tasks": [
+          {
+            "name": "評価シートの現状分析",
+            "duration": "1週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "マネージャー層への課題ヒアリング",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "設計・構築",
+        "tasks": [
+          {
+            "name": "ダッシュボード要件定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "システム構築・レポート作成",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "要件定義承認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "テスト・展開",
+        "tasks": [
+          {
+            "name": "UAT（受入テスト）の実施",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "構築完了"
+          },
+          {
+            "name": "説明会実施と全社展開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "UAT完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "低難易度（既存設定の応用のみで完結するため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約150万円",
+    "created_at": "2026-02-25T18:20:34.042975+00:00",
+    "updated_at": "2026-02-25T18:20:34.042975+00:00"
+  },
+  {
+    "id": "67ab4530-8de8-4e66-87ff-4bdeb5848dc9",
+    "persona": "HR Specialist",
+    "title": "評価プロセス可視化ダッシュボードの導入",
+    "target": "既存顧客",
+    "modules": "Performance & Goals",
+    "approach": "【課題】評価面談時、期中の目標変更やフィードバックの経緯が不透明で従業員の不満に繋がる。\n\n【解決案】Performance & Goalsの標準レポート機能を拡張し、目標変更履歴と連続的フィードバック(CPM)のデータを一覧できるマネージャー向けダッシュボードを構築する。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "評価の納得度低下という明確な人事課題を解決でき、既存顧客のモジュール活用度アップによるリテンション強化に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "課題アセスメント",
+        "tasks": [
+          {
+            "name": "評価シートの現状分析",
+            "duration": "1週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          },
+          {
+            "name": "マネージャー層への課題ヒアリング",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "設計・構築",
+        "tasks": [
+          {
+            "name": "ダッシュボード要件定義",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "システム構築・レポート作成",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "要件定義承認後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "テスト・展開",
+        "tasks": [
+          {
+            "name": "UAT（受入テスト）の実施",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "構築完了"
+          },
+          {
+            "name": "説明会実施と全社展開",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "UAT完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "中難易度（一部アドオン開発やAPI連携が必要なため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約150万円",
+    "created_at": "2026-02-25T18:11:50.111399+00:00",
+    "updated_at": "2026-02-25T18:20:36.848900+00:00"
+  },
+  {
+    "id": "aa12e189-2477-4432-a770-5e18dc258d5a",
+    "persona": "Operations Manager",
+    "title": "組織改編データ移行の事前バリデーションツール",
+    "target": "既存顧客",
+    "modules": "Employee Central",
+    "approach": "【課題】大量のCSVインポートエラーで人事の残業が常態化。\n\n【解決案】インポート前にSuccessFactorsのデータ要件（必須項目・マスター整合性）をローカルで自動チェックするExcel/Webアプリを導入。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "人事担当者のダイレクトなペインポイントを解消するため、成約率が極めて高い。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "仕様定義",
+        "tasks": [
+          {
+            "name": "過去のエラーログ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "なし"
+          },
+          {
+            "name": "バリデーションルール一覧の策定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "分析完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "開発・テスト",
+        "tasks": [
+          {
+            "name": "チェックツールの実装",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "過去データを用いた単体テスト",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "実装完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "実地運用",
+        "tasks": [
+          {
+            "name": "次期組織改編データでのプレテスト",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "開発完了"
+          },
+          {
+            "name": "操作マニュアル提供と運用開始",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "プレテスト完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "中難易度（一部アドオン開発やAPI連携が必要なため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約100万円",
+    "created_at": "2026-02-25T18:06:01.508360+00:00",
+    "updated_at": "2026-02-25T18:20:51.076302+00:00",
+    "review_comment": "HR Specialistからの指摘: 導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。"
+  },
+  {
+    "id": "c9e0178f-8738-4ed2-a7e7-d280c3b2e753",
+    "persona": "HR Specialist",
+    "title": "スキルオントロジーとLMSの自動連携",
+    "target": "新規開拓",
+    "modules": "Learning, Succession & Development",
+    "approach": "【課題】従業員がキャリアパスに必要なスキルを把握できずLMSが受講されない。\n\n【解決案】職務定義のスキル要件と連携し、不足スキルを補うLearningコースを自動リコメンドする。\n\n【追加検討】カスタマーサクセスチームと連携し、稼働後3ヶ月間はKPIモニタリングを無償提供して満足度を高める。",
+    "rationale": "リスキリングトレンドに合致し、Learningのライセンス販売に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "スキル定義",
+        "tasks": [
+          {
+            "name": "コア職務のレベル別要件定義",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "マッピング",
+        "tasks": [
+          {
+            "name": "既存LMSコンテンツの棚卸し",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "スキルタグとの紐付け設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "棚卸し完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "トライアル運用",
+        "tasks": [
+          {
+            "name": "パイロット部門でのレコメンド検証",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "マッピング完了"
+          },
+          {
+            "name": "全社向けのキャリア自律方針発信",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "検証完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約450万円",
+    "created_at": "2026-02-25T18:12:04.137477+00:00",
+    "updated_at": "2026-02-25T18:21:10.918590+00:00"
+  },
+  {
+    "id": "3c90e628-0382-4a18-861b-8ccb12bca568",
+    "persona": "Financial Analyst",
+    "title": "ライセンス使用率分析とコスト最適化ツール",
+    "target": "既存顧客",
+    "modules": "Platform (Foundation)",
+    "approach": "【課題】退職者の残存アカウント等により無駄なライセンス費用が発生している。\n\n【解決案】利用頻度や最終ログイン日をAPIで自動抽出し、不要ライセンスを特定するレポートを提供する。",
+    "rationale": "SaaSのコスト最適化はCFOの関心事であり、浮いた予算を別Add-onに回せる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "現状把握",
+        "tasks": [
+          {
+            "name": "ライセンス契約状況とログイン状況の抽出",
+            "duration": "4週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "分析・試算",
+        "tasks": [
+          {
+            "name": "休眠アカウントのリストアップ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "アカウント停止要否の判定とコスト試算",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "リストアップ完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "クリーンアップ",
+        "tasks": [
+          {
+            "name": "不要アカウントの無効化処理",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "判定完了"
+          },
+          {
+            "name": "効果測定レポートの提出",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "無効化完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 5,
+    "cost": "約80万円",
+    "created_at": "2026-02-25T18:21:13.105400+00:00",
+    "updated_at": "2026-02-25T18:21:13.105400+00:00"
+  },
+  {
+    "id": "6333b22e-abf3-4c39-b96e-dfb1ce8b9a6c",
+    "persona": "Financial Analyst",
+    "title": "ライセンス使用率分析とコスト最適化ツール",
+    "target": "既存顧客",
+    "modules": "Platform (Foundation)",
+    "approach": "【課題】退職者の残存アカウント等により無駄なライセンス費用が発生している。\n\n【解決案】利用頻度や最終ログイン日をAPIで自動抽出し、不要ライセンスを特定するレポートを提供する。\n\n【追加検討】導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。",
+    "rationale": "SaaSのコスト最適化はCFOの関心事であり、浮いた予算を別Add-onに回せる。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "現状把握",
+        "tasks": [
+          {
+            "name": "ライセンス契約状況とログイン状況の抽出",
+            "duration": "4週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "分析・試算",
+        "tasks": [
+          {
+            "name": "休眠アカウントのリストアップ分析",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "アカウント停止要否の判定とコスト試算",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "リストアップ完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "クリーンアップ",
+        "tasks": [
+          {
+            "name": "不要アカウントの無効化処理",
+            "duration": "2週間",
+            "raci": "V: A / C: R",
+            "dependency": "判定完了"
+          },
+          {
+            "name": "効果測定レポートの提出",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "無効化完了後"
+          }
+        ]
+      }
+    ],
+    "cost": "約80万円",
+    "created_at": "2026-02-25T18:06:18.302744+00:00",
+    "updated_at": "2026-02-25T18:21:23.948070+00:00"
+  },
+  {
+    "id": "75d60579-2784-4527-8c15-f1ccea201c2d",
+    "persona": "HR Specialist",
+    "title": "スキルオントロジーとLMSの自動連携",
+    "target": "新規開拓",
+    "modules": "Learning, Succession & Development",
+    "approach": "【課題】従業員がキャリアパスに必要なスキルを把握できずLMSが受講されない。\n\n【解決案】職務定義のスキル要件と連携し、不足スキルを補うLearningコースを自動リコメンドする。",
+    "rationale": "リスキリングトレンドに合致し、Learningのライセンス販売に直結する。",
+    "schedule": [
+      {
+        "month": "Month 1",
+        "phase": "スキル定義",
+        "tasks": [
+          {
+            "name": "コア職務のレベル別要件定義",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          }
+        ]
+      },
+      {
+        "month": "Month 2",
+        "phase": "マッピング",
+        "tasks": [
+          {
+            "name": "既存LMSコンテンツの棚卸し",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "Month 1完了"
+          },
+          {
+            "name": "スキルタグとの紐付け設定",
+            "duration": "2週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "棚卸し完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "トライアル運用",
+        "tasks": [
+          {
+            "name": "パイロット部門でのレコメンド検証",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "マッピング完了"
+          },
+          {
+            "name": "全社向けのキャリア自律方針発信",
+            "duration": "2週間",
+            "raci": "V: I / C: A,R",
+            "dependency": "検証完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 4,
+    "cost": "約450万円",
+    "created_at": "2026-02-25T18:21:31.155670+00:00",
+    "updated_at": "2026-02-25T18:21:31.155670+00:00"
+  },
+  {
+    "id": "936251e2-f8c3-41c3-beac-b2da3f26fe71",
+    "persona": "Data Scientist",
+    "title": "退職リスク予測モデルの実装",
+    "target": "既存顧客",
+    "modules": "Employee Central, Performance & Goals",
+    "approach": "【課題】キーパーソンの突然の退職を事前に察知できない。\n\n【解決案】SF内の給与・評価推移データを抽出し、機械学習で高リスク従業員をアラートするモデルを構築。\n\n【追加検討】更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。",
+    "rationale": "データドリブンな人事戦略の中核となり、高度な活用を望む層へアップセルしやすい。",
+    "schedule": [
+      {
+        "month": "Month 1-2",
+        "phase": "データ抽出・加工",
+        "tasks": [
+          {
+            "name": "必要データセットの特定とマスク処理",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "特徴量エンジニアリングと前処理",
+            "duration": "4週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "データ抽出完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "モデル構築",
+        "tasks": [
+          {
+            "name": "機械学習モデルの学習および精度検証",
+            "duration": "4週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "前処理完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 4",
+        "phase": "ダッシュボード統合",
+        "tasks": [
+          {
+            "name": "予測スコアのアラート画面への埋め込み",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "モデル完成後"
+          },
+          {
+            "name": "HRBP向けアクションプラン策定支援",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "画面実装完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（要件定義での利害調整が難航しやすいため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 3,
+    "cost": "約600万円",
+    "created_at": "2026-02-25T18:12:25.169124+00:00",
+    "updated_at": "2026-02-25T18:21:37.975111+00:00"
+  },
+  {
+    "id": "8f1186d2-63f5-4cd9-90b4-4e7c8152d2a4",
+    "persona": "Data Scientist",
+    "title": "退職リスク予測モデルの実装",
+    "target": "既存顧客",
+    "modules": "Employee Central, Performance & Goals",
+    "approach": "【課題】キーパーソンの突然の退職を事前に察知できない。\n\n【解決案】SF内の給与・評価推移データを抽出し、機械学習で高リスク従業員をアラートするモデルを構築。\n\n【追加検討】更に、BTP(Business Technology Platform)を活用したモバイル承認フローをアドオンで提供することも視野に入れる。",
+    "rationale": "データドリブンな人事戦略の中核となり、高度な活用を望む層へアップセルしやすい。",
+    "schedule": [
+      {
+        "month": "Month 1-2",
+        "phase": "データ抽出・加工",
+        "tasks": [
+          {
+            "name": "必要データセットの特定とマスク処理",
+            "duration": "4週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "なし"
+          },
+          {
+            "name": "特徴量エンジニアリングと前処理",
+            "duration": "4週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "データ抽出完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 3",
+        "phase": "モデル構築",
+        "tasks": [
+          {
+            "name": "機械学習モデルの学習および精度検証",
+            "duration": "4週間",
+            "raci": "V: A,R / C: C",
+            "dependency": "前処理完了後"
+          }
+        ]
+      },
+      {
+        "month": "Month 4",
+        "phase": "ダッシュボード統合",
+        "tasks": [
+          {
+            "name": "予測スコアのアラート画面への埋め込み",
+            "duration": "2週間",
+            "raci": "V: A,R / C: I",
+            "dependency": "モデル完成後"
+          },
+          {
+            "name": "HRBP向けアクションプラン策定支援",
+            "duration": "2週間",
+            "raci": "V: C / C: A,R",
+            "dependency": "画面実装完了後"
+          }
+        ]
+      }
+    ],
+    "difficulty": "高難易度（全社的な業務フロー是正が伴うため）",
+    "reference": "https://help.sap.com/docs/SAP_SUCCESSFACTORS_RELEASE_INFORMATION",
+    "recommendation_score": 3,
+    "cost": "約600万円",
+    "created_at": "2026-02-25T18:06:22.523517+00:00",
+    "updated_at": "2026-02-25T18:21:47.192146+00:00",
+    "review_comment": "Operations Managerからの指摘: 導入後の定着化（チェンジマネジメント）として、現場向けのマニュアル動画作成支援もパッケージに含める。"
+  }
+]

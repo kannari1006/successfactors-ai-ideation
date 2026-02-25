@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuccessFactors AI Ideation Dashboard</title>
+    <meta name="description" content="AI subordinates continually ideate to improve SuccessFactors service provision.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=3">
+</head>
+
+<body>
+    <div id="update-banner" class="hidden banner">
+        <span class="banner-icon">✨</span>
+        <span class="banner-text">AIチームの新しいアイディアが更新されました！クリックして確認してください。</span>
+    </div>
+
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-top">
+                <div class="header-content">
+                    <h1>SuccessFactors <span class="gradient-text">AI Evolution</span></h1>
+                    <p>6種類の専門AIによる継続的なサービス改善プラン</p>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-badge">
+                        <span class="stat-label">AI稼働状況</span>
+                        <span class="stat-value active">稼働中 (6名)</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-label">総アイディア数</span>
+                        <span class="stat-value" id="total-ideas">-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-controls">
+                <select id="filter-target">
+                    <option value="all">すべてのターゲット</option>
+                    <option value="新規開拓">新規開拓</option>
+                    <option value="既存顧客">既存顧客</option>
+                </select>
+                <select id="filter-module">
+                    <option value="all">すべてのモジュール</option>
+                </select>
+                <select id="filter-audience">
+                    <option value="all">すべての対象層</option>
+                </select>
+                <select id="sort-score">
+                    <option value="default">推奨度：標準</option>
+                    <option value="desc">推奨度：高い順</option>
+                    <option value="asc">推奨度：低い順</option>
+                </select>
+                <button class="header-btn" onclick="fetchAndRenderIdeas()">
+                    <i class="fas fa-sync-alt"></i> リロード
+                </button>
+            </div>
+        </header>
+
+        <section class="events-topbar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-history" style="color:var(--danger)"></i> LIVE: AI検討履歴</h3>
+            </div>
+            <div id="events-list" class="events-list-horizontal">
+                <!-- Event logs injected here -->
+            </div>
+        </section>
+
+        <main class="dashboard-main">
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>AIの思考を読み込み中...</p>
+            </div>
+            <div id="ideas-grid" class="ideas-grid">
+                <!-- Data will be injected here via app.js -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Define the JS globally or as module -->
+    <script src="/static/app.js?v=3"></script>
+</body>
+
+</html>
