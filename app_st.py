@@ -7,6 +7,15 @@ from datetime import datetime, timezone
 import re
 from ai_worker import run_ai_simulation
 
+# --- Page Config ---
+# Must be the very first Streamlit command
+st.set_page_config(
+    page_title="SuccessFactors AI Ideation Dashboard",
+    page_icon="✨",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # --- Initialization & Background Worker ---
 
 # Start background AI simulation in a separate thread, running an asyncio loop
@@ -26,14 +35,6 @@ def start_worker():
 
 # Ensure the worker starts once
 start_worker()
-
-# --- Page Config ---
-st.set_page_config(
-    page_title="SuccessFactors AI Ideation Dashboard",
-    page_icon="✨",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
 
 # --- CSS Injection ---
 def load_css():
