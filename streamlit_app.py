@@ -227,7 +227,6 @@ def render_idea_card(idea):
                 actor = new_t.get('actor', '')
                 if not actor and 'raci' in new_t:
                     raci_str = new_t['raci']
-                    import re
                     v_match = re.search(r'V:\s*([A-Za-z,]+)', raci_str)
                     c_match = re.search(r'C:\s*([A-Za-z,]+)', raci_str)
                     v_ar = bool(v_match and ('A' in v_match.group(1) or 'R' in v_match.group(1)))
